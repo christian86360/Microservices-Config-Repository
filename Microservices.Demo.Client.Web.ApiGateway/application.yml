@@ -140,9 +140,9 @@ Routes:
             AuthenticationProviderKey: ApiSecurityAuthenticationScheme
           # AllowedScopes:
     #   -    
-        RouteClaimsRequirement:
-            userType: SALESMAN
-        DangerousAcceptAnyServerCertificateValidator: true
+        #RouteClaimsRequirement:
+          #  userType: SALESMAN
+        #DangerousAcceptAnyServerCertificateValidator: true
 GlobalConfiguration:
     RequestIdKey: OcRequestId
     AdministrationPath: /administration
