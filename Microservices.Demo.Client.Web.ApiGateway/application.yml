@@ -126,23 +126,21 @@ Routes:
 #                -      
         RouteClaimsRequirement: 
             userType: SALESMAN   
-        DangerousAcceptAnyServerCertificateValidator: true
-     -
-        DownstreamPathTemplate: /api/report
+        DangerousAcceptAnyServerCertificateValidator: true  
+    -
+        DownstreamPathTemplate: /api/Report
         DownstreamScheme: http
-        UpstreamPathTemplate: /api/report
+        UpstreamPathTemplate: /api/Report
         ServiceName: Microservices.Demo.Report.API
         UpstreamHttpMethod:
-            - Get  # o cualquier otro método HTTP que desees permitir, como POST, PUT, DELETE, etc.
-        FileCacheOptions:
-            TtlSeconds: 15
+            - Get
         AuthenticationOptions:
             AuthenticationProviderKey: ApiSecurityAuthenticationScheme
-          # AllowedScopes:
-    #   -    
-        #RouteClaimsRequirement:
-          #  userType: SALESMAN
-        #DangerousAcceptAnyServerCertificateValidator: true
+        RouteClaimsRequirement:
+            userType: SALESMAN
+        DangerousAcceptAnyServerCertificateValidator: true
+      
+  
 GlobalConfiguration:
     RequestIdKey: OcRequestId
     AdministrationPath: /administration
